@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">My Application</string>
+    <string name="hello_world">Olá Mundo!</string>
+    <string name="action_settings">Settings</string>
+    <string name="lblValor1">Valor 1</string>
+    <string name="lblValor2">Valor 2</string>
+    <string name="lblValor3">Resultado</string>
+</resources>
