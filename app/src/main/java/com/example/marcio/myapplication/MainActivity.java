@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import java.lang.*;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -24,6 +25,7 @@ public class MainActivity extends ActionBarActivity {
     public Button btnSubtrair;
     public Button btnMultiplicar;
     public Button btnDividir;
+    public Button btnPotencia;
 
     private void PegarValores(){
         Valor1 = Double.parseDouble(edtValor1.getText().toString());
@@ -88,6 +90,18 @@ public class MainActivity extends ActionBarActivity {
         }
     };
 
+    View.OnClickListener btnPotenciaClick = new View.OnClickListener(){
+        @Override
+        public void onClick(View v){
+            PegarValores();
+
+            Resultado = Math.pow(Valor1, Valor2);
+
+            edtResultado.setText(String.valueOf(Resultado));
+
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,6 +115,7 @@ public class MainActivity extends ActionBarActivity {
         btnSubtrair     = (Button) findViewById(R.id.btnSubtrair);
         btnMultiplicar  = (Button) findViewById(R.id.btnMultiplicar);
         btnDividir      = (Button) findViewById(R.id.btnDividir);
+        btnPotencia     = (Button)findViewById(R.id.btnPotencia);
 
         // atribui os métodos aos widgets
         btnSomar.setOnClickListener(btnSomarClick);
@@ -111,6 +126,8 @@ public class MainActivity extends ActionBarActivity {
         btnMultiplicar.setOnClickListener(btnMultiplicarClick);
 
         btnDividir.setOnClickListener(btnDividirClick);
+
+        btnPotencia.setOnClickListener(btnPotenciaClick);
 
     }
 
